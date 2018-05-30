@@ -1,15 +1,40 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
 
-@mixin transform($transforms) {
-    -moz-transform: $transforms;
-    -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+    #{$property}: #{$value};
 }
 
 @mixin rotate($deg) {
-    @include transform(rotate(#{$deg}deg));
+    @include prefix(transform, rotate(#{$deg}deg));
+}
+
+@mixin animate($name, $options) {
+    @include prefix(animation, #{$name + " " + $options});
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(fadeIn) {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 $green: #43FE99;
@@ -65,6 +90,7 @@ p {
     line-height: 1;
     margin-top: 0;
     margin-bottom: 16px;
+    @include animate(fadeIn, 1s)
 }
 
 .slogan {

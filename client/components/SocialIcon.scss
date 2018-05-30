@@ -1,0 +1,11 @@
+@import '../scss/variables.scss';
+
+.social-icon {
+    display: block;
+    text-decoration: none;
+    color: $green;
+
+    &:hover {
+        color: $green-hover;
+    }
+}

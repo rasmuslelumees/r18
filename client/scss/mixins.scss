@@ -1,0 +1,36 @@
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+    @if $vendors {
+        @each $vendor in $vendors {
+            #{"-" + $vendor + "-" + $property}: #{$value};
+        }
+    }
+    #{$property}: #{$value};
+}
+
+@mixin rotate($deg) {
+    @include prefix(transform, rotate(#{$deg}deg));
+}
+
+@mixin animate($name, $options) {
+    @include prefix(animation, #{$name + " " + $options});
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@include keyframes(fadeIn) {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}

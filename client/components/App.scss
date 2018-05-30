@@ -1,47 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
+@import '../scss/variables.scss';
+@import '../scss/mixins.scss';
 
-@mixin prefix($property, $value, $vendors: webkit moz ms o) {
-    @if $vendors {
-        @each $vendor in $vendors {
-            #{"-" + $vendor + "-" + $property}: #{$value};
-        }
-    }
-    #{$property}: #{$value};
-}
-
-@mixin rotate($deg) {
-    @include prefix(transform, rotate(#{$deg}deg));
-}
-
-@mixin animate($name, $options) {
-    @include prefix(animation, #{$name + " " + $options});
-}
-
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    }
-}
-
-@include keyframes(fadeIn) {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-$green: #43FE99;
-$green-hover: #3CEB8C;
-$blue: #0089FF;
-$white: #FFFFFF;
-$primary-font: 'Maven Pro', sans-serif;
 
 html, body {
     margin: 0;
@@ -114,17 +74,6 @@ p {
     margin: 0 auto;
 }
 
-.skills__tag {
-    background-color: $blue;
-    color: $white;
-    font-weight: 500;
-    display: inline-block;
-    padding: 4px 12px;
-    font-size: 12px;
-    border-radius: 12px;
-    margin: 3px;
-}
-
 .more-info {
     margin-top: 60px;
 }
@@ -137,17 +86,7 @@ p {
 
 .social-icons {
     display: flex;
-    max-width: 70px;
+    max-width: 88px;
     margin: 0 auto;
     justify-content: space-between;
-}
-
-.social-icons__icon {
-    display: block;
-    text-decoration: none;
-    color: $green;
-
-    &:hover {
-        color: $green-hover;
-    }
 }

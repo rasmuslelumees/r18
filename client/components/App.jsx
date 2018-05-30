@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import SocialIcon from './SocialIcon.jsx';
+import SkillTag from './SkillTag.jsx';
 import './App.scss';
 import '../favicon.ico';
 
-export default class App extends React.Component {
+export default class App extends Component {
     render() {
         return (
             <div className='container'>
@@ -13,23 +15,24 @@ export default class App extends React.Component {
                     <p className='slogan'>My name is Rasmus Lelumees. I’m a <span className='bold'>designer</span> and <span className='bold'>software engineer</span>.</p>
                     <p className='slogan'>What I think I'm good at</p>
                     <div className='skills'>
-                        <div className='skills__tag'>Web development</div>
-                        <div className='skills__tag'>JavaScript</div>
-                        <div className='skills__tag'>React</div>
-                        <div className='skills__tag'>HTML</div>
-                        <div className='skills__tag'>CSS</div>
-                        <div className='skills__tag'>UI design</div>
-                        <div className='skills__tag'>Branding</div>
-                        <div className='skills__tag'>Full-stack development</div>
-                        <div className='skills__tag'>Node JS</div>
-                        <div className='skills__tag'>AWS</div>
+                        <SkillTag name='Web development'/>
+                        <SkillTag name='JavaScript'/>
+                        <SkillTag name='React'/>
+                        <SkillTag name='HTML'/>
+                        <SkillTag name='CSS'/>
+                        <SkillTag name='UI design'/>
+                        <SkillTag name='Branding'/>
+                        <SkillTag name='Full-stack development'/>
+                        <SkillTag name='Node JS'/>
+                        <SkillTag name='AWS'/>
                     </div>
                     <div className='more-info'>
                         <p className='more-info__label'>More info & work</p>
                         <div className='social-icons'>
-                            <a href='#' className='social-icons__icon'><i className='fab fa-behance'></i></a>
-                            <a href='#' className='social-icons__icon'><i className='fab fa-dribbble'></i></a>
-                            <a href='#' className='social-icons__icon'><i className='fab fa-linkedin-in'></i></a>
+                            <SocialIcon name='github' url='https://github.com/rasmuslelumees'/>
+                            <SocialIcon name='dribbble' url='https://dribbble.com/rasmuslelumees'/>
+                            <SocialIcon name='behance' url='https://www.behance.net/RasmusL'/>
+                            <SocialIcon name='linkedin-in' url='https://www.linkedin.com/in/rasmuslelumees/'/>
                         </div>
                     </div>
                 </div>

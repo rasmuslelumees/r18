@@ -5,7 +5,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
     template: './client/index.html',
     filename: 'index.html',
     inject: 'body'
-})
+});
 
 module.exports = {
     entry: './client/index.js',
@@ -30,8 +30,14 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: "babel-loader"
+            },
+            {
+                test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                use: 'file-loader?name=[name].[ext]'  // <-- retain original file name
             }
         ]
     },
-    plugins: [HtmlWebpackPluginConfig]
+    plugins: [
+        HtmlWebpackPluginConfig
+    ]
 }

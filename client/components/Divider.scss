@@ -1,0 +1,12 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins.scss';
+
+.divider {
+    width: 140px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $green;
+    margin: 0 auto;
+    opacity: 0;
+    @include animate(fadeIn, 1s ease .1s 1 normal forwards)
+}

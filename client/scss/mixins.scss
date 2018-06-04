@@ -11,6 +11,11 @@
     @include prefix(transform, rotate(#{$deg}deg));
 }
 
+@mixin translateY($y) {
+    @include prefix(transform, translateY(#{$y}));
+}
+
+/* @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
 @mixin animate($name, $options) {
     @include prefix(animation, #{$name + " " + $options});
 }
@@ -33,4 +38,21 @@
 @include keyframes(fadeIn) {
     0%   { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@include keyframes(revealSlideIn) {
+    0%   { opacity: 0; width: 0; }
+    10%  { opacity: 1; width: 0; }
+    100% { opacity: 1; width: 286px; }
+}
+
+@include keyframes(slideIn) {
+    0%   { margin-left: -286px; }
+    100% { margin-left: 0; }
+}
+
+@include keyframes(bounceInArrow) {
+    0%   { margin-top: -30px; }
+    50% { margin-top: -10px; }
+    100% { margin-top: -15px; }
 }

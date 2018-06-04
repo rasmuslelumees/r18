@@ -1,19 +1,31 @@
 import React, { Component } from 'react';
 import SocialIcon from './SocialIcon.jsx';
 import SkillTag from './SkillTag.jsx';
+import Divider from './Divider.jsx';
 import './App.scss';
 import '../favicon.ico';
 
 export default class App extends Component {
+    renderSlogan() {
+        return (
+            <p className='slogan'>
+                <span className='slogan__fade'>My name is Rasmus Lelumees.</span>
+                <div className='slogan__slide-wrap'>
+                    <span className='slogan__slide'>I’m a <b>designer</b> and <b>software engineer</b>.</span>
+                </div>
+            </p>
+        );
+    }
+
     render() {
         return (
             <div className='container'>
                 <div className='arrow'></div>
                 <div className='content-wrap'>
                     <h1 className='main-title'>Hello</h1>
-                    <div className='divider'></div>
-                    <p className='slogan'>My name is Rasmus Lelumees. I’m a <span className='bold'>designer</span> and <span className='bold'>software engineer</span>.</p>
-                    <p className='slogan'>What I think I'm good at</p>
+                    <Divider />
+                    { this.renderSlogan() }
+                    <p className='skills__label'>What I think I'm good at</p>
                     <div className='skills'>
                         <SkillTag name='Web development'/>
                         <SkillTag name='JavaScript'/>

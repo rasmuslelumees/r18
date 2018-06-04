@@ -4,8 +4,11 @@
     display: block;
     text-decoration: none;
     color: $green;
+    transition: all .3s ease;
+    padding-bottom: 4px;
 
     &:hover {
         color: $green-hover;
+        transform: translateY(-4px);
     }
 }

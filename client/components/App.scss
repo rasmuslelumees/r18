@@ -44,7 +44,7 @@ p {
     border-radius: 4px;
     background: $green;
     @include rotate(45);
-    @include animate(bounceInArrow, 500ms)
+    @include animate(bounceInArrow, .5s)
 }
 
 .main-title {
@@ -52,7 +52,7 @@ p {
     margin-top: 0;
     margin-bottom: 16px;
     opacity: 0;
-    @include animate(fadeIn, 1s ease .1s 1 normal forwards)
+    @include animate(fadeIn, 1s ease .5s 1 normal forwards)
 }
 
 .slogan {
@@ -66,7 +66,7 @@ p {
     white-space: nowrap;
     opacity: 0;
     margin-right: 4px;
-    @include animate(fadeIn, 1s ease .5s 1 normal forwards)
+    @include animate(fadeIn, 1s ease 1s 1 normal forwards)
 }
 
 .slogan__slide-wrap {
@@ -75,12 +75,12 @@ p {
     white-space: nowrap;
     opacity: 0;
     width: 0;
-    @include animate(revealSlideIn, .5s ease 1s 1 normal forwards)
+    @include animate(revealSlideIn, .5s $main-transition 1.5s 1 normal forwards)
 }
 
 .slogan__slide {
     margin-left: -100%;
-    @include animate(slideIn, .5s ease 1.1s 1 normal forwards)
+    @include animate(slideIn, .5s $main-transition 1.6s 1 normal forwards)
 }
 
 .skills__label {
@@ -100,17 +100,9 @@ p {
     margin-top: 60px;
 }
 
-.more-info__label {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    opacity: 0;
-    @include animate(fadeIn, 1s ease 3s 1 normal forwards)
-}
-
 .social-icons {
     display: flex;
-    max-width: 88px;
+    max-width: 120px;
     margin: 0 auto;
     justify-content: space-between;
     opacity: 0;

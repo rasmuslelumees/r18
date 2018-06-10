@@ -1,12 +1,18 @@
 @import '../scss/variables.scss';
 @import '../scss/mixins.scss';
 
+@include keyframes(revealDivider) {
+    0%   { width: 4px; opacity: 0; }
+    30%  { width: 4px; opacity: 1; }
+    100% { width: 140px; opacity: 1; }
+}
+
 .divider {
-    width: 140px;
     height: 4px;
+    width: 4px;
     border-radius: 4px;
     background-color: $green;
     margin: 0 auto;
     opacity: 0;
-    @include animate(fadeIn, 1s ease .1s 1 normal forwards)
+    @include animate(revealDivider, 1s $main-transition .1s 1 normal forwards)
 }

@@ -39,7 +39,6 @@ export default class App extends Component {
                         <SkillTag name='AWS'/>
                     </div>
                     <div className='more-info'>
-                        <p className='more-info__label'>More info & work</p>
                         <div className='social-icons'>
                             <SocialIcon name='github' url='https://github.com/rasmuslelumees'/>
                             <SocialIcon name='dribbble' url='https://dribbble.com/rasmuslelumees'/>

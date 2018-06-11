@@ -1,22 +1,17 @@
 @import '../scss/variables.scss';
 @import '../scss/mixins.scss';
 
-@include keyframes(revealTag) {
-    0%   { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
 .skill-tag {
     background-color: $blue;
     color: $white;
     font-weight: 500;
     display: inline-block;
-    padding: 4px 12px;
-    font-size: 12px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 16px;
     margin: 3px;
     opacity: 0;
-    transform: scale(0.1);
+    transform: scale(0);
 
-    @include animate(revealTag, 1s $main-transition .1s 1 normal forwards)
+    @include animate(revealScale, .7s $bouncy-transition .1s 1 normal forwards)
 }

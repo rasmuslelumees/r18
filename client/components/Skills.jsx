@@ -6,7 +6,7 @@ export default class Skills extends Component {
 
     render() {
         const animationStart = this.props.animationStart;
-        const animationDelayIteration = 0.15;
+        const animationDelayIteration = 0.1;
 
         const skills = [
             'Web development',

@@ -9,5 +9,5 @@
 .skills__label {
     margin-top: 30px;
     opacity: 0;
-    @include animate(fadeIn, 1s ease 2s 1 normal forwards)
+    @include animate(fadeIn, 1s ease 2.2s 1 normal forwards)
 }

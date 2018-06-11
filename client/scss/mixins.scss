@@ -15,7 +15,15 @@
     @include prefix(transform, translateY(#{$y}));
 }
 
-/* @keyframes duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
+@mixin scale($z) {
+    @include prefix(transform, scale(#{$z}));
+}
+
+@mixin transition($options) {
+    @include prefix(transition, #{$options});
+}
+
+/* duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
 @mixin animate($name, $options) {
     @include prefix(animation, #{$name + " " + $options});
 }
@@ -55,4 +63,9 @@
     0%   { margin-top: -30px; }
     50% { margin-top: -10px; }
     100% { margin-top: -15px; }
+}
+
+@include keyframes(revealScale) {
+    0%   { @include scale(0); opacity: 0; }
+    100% { @include scale(1); opacity: 1; }
 }

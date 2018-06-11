@@ -1,0 +1,16 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins.scss';
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -15px;
+    border-radius: 4px;
+    background: $green;
+    @include rotate(45);
+    @include animate(bounceInArrow, .5s)
+}

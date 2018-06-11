@@ -1,15 +1,25 @@
 @import '../scss/variables.scss';
+@import '../scss/mixins.scss';
 
 .social-icon {
     display: block;
     text-decoration: none;
     color: $green;
+    border: 1px solid $green;
     transition: all .3s ease;
-    padding-bottom: 4px;
+    padding: 6px;
+    border-radius: 50%;
     font-size: 18px;
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+    opacity: 0;
+
+    @include animate(revealScale, .7s $bouncy-transition 5s 1 normal forwards)
+    @include transition(all .5s ease)
 
     &:hover {
-        color: $green-hover;
-        transform: translateY(-4px);
+        background-color: $green;
+        color: $white;
     }
 }

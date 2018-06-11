@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import SocialIcon from './SocialIcon.jsx';
+import Arrow from './Arrow.jsx';
 import Skills from './Skills.jsx';
 import Divider from './Divider.jsx';
+import Social from './Social.jsx';
+import Title from './Title.jsx';
 import './App.scss';
 import '../favicon.ico';
 
 export default class App extends Component {
-
-    renderTitle() {
-        return <h1 className='main-title'>Hello</h1>;
-    }
 
     renderSlogan() {
         return (
@@ -25,20 +23,13 @@ export default class App extends Component {
     render() {
         return (
             <div className='container'>
-                <div className='arrow'></div>
+                <Arrow animationStart={0} />
                 <div className='content-wrap'>
-                    { this.renderTitle() }
+                    <Title text='Hello' />
                     <Divider />
                     { this.renderSlogan() }
                     <Skills animationStart={2.5} />
-                    <div className='more-info'>
-                        <div className='social-icons'>
-                            <SocialIcon name='github' url='https://github.com/rasmuslelumees'/>
-                            <SocialIcon name='dribbble' url='https://dribbble.com/rasmuslelumees'/>
-                            <SocialIcon name='behance' url='https://www.behance.net/RasmusL'/>
-                            <SocialIcon name='linkedin-in' url='https://www.linkedin.com/in/rasmuslelumees/'/>
-                        </div>
-                    </div>
+                    <Social animationStart={3.8} />
                 </div>
             </div>
         );

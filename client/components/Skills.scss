@@ -1,0 +1,13 @@
+@import '../scss/variables.scss';
+@import '../scss/mixins.scss';
+
+.skills {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.skills__label {
+    margin-top: 30px;
+    opacity: 0;
+    @include animate(fadeIn, 1s ease 2s 1 normal forwards)
+}

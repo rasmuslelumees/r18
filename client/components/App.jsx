@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import SocialIcon from './SocialIcon.jsx';
-import SkillTag from './SkillTag.jsx';
+import Skills from './Skills.jsx';
 import Divider from './Divider.jsx';
 import './App.scss';
 import '../favicon.ico';
 
 export default class App extends Component {
+
+    renderTitle() {
+        return <h1 className='main-title'>Hello</h1>;
+    }
+
     renderSlogan() {
         return (
             <p className='slogan'>
@@ -22,22 +27,10 @@ export default class App extends Component {
             <div className='container'>
                 <div className='arrow'></div>
                 <div className='content-wrap'>
-                    <h1 className='main-title'>Hello</h1>
+                    { this.renderTitle() }
                     <Divider />
                     { this.renderSlogan() }
-                    <p className='skills__label'>What I think I'm good at</p>
-                    <div className='skills'>
-                        <SkillTag name='Web development'/>
-                        <SkillTag name='JavaScript'/>
-                        <SkillTag name='React'/>
-                        <SkillTag name='HTML'/>
-                        <SkillTag name='CSS'/>
-                        <SkillTag name='UI design'/>
-                        <SkillTag name='Branding'/>
-                        <SkillTag name='Full-stack development'/>
-                        <SkillTag name='Node JS'/>
-                        <SkillTag name='AWS'/>
-                    </div>
+                    <Skills animationStart={2.5} />
                     <div className='more-info'>
                         <div className='social-icons'>
                             <SocialIcon name='github' url='https://github.com/rasmuslelumees'/>

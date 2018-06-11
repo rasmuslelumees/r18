@@ -58,6 +58,7 @@ p {
 .slogan {
     margin-top: 30px;
     overflow: hidden;
+    line-height: 20px;
 }
 
 .slogan__fade {
@@ -83,19 +84,6 @@ p {
     @include animate(slideIn, .5s $main-transition 1.6s 1 normal forwards)
 }
 
-.skills__label {
-    margin-top: 30px;
-    opacity: 0;
-    @include animate(fadeIn, 1s ease 2s 1 normal forwards)
-}
-
-.skills {
-    max-width: 300px;
-    margin: 0 auto;
-    opacity: 0;
-    @include animate(fadeIn, 1s ease 2.3s 1 normal forwards)
-}
-
 .more-info {
     margin-top: 60px;
 }
@@ -106,5 +94,5 @@ p {
     margin: 0 auto;
     justify-content: space-between;
     opacity: 0;
-    @include animate(fadeIn, 1s ease 3.3s 1 normal forwards)
+    @include animate(fadeIn, 1s ease 5s 1 normal forwards)
 }

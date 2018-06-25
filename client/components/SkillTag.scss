@@ -1,7 +1,72 @@
 @import '../scss/variables.scss';
 @import '../scss/mixins.scss';
 
+$tag-line-height: 20px;
+$tag-helptext-height: 56px;
+$tag-helptext-width: 200px;
+
+@include keyframes(revealHelp) {
+    0%   {
+        width: 0;
+        height: 0;
+        bottom: -$tag-line-height;
+    }
+    10%   {
+        width: 2px;
+        height: 2px;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + 2);
+        margin-left: -1px;
+    }
+    50%  {
+        width: $tag-helptext-width;
+        height: 2px;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + 2);
+        margin-left: -($tag-helptext-width / 2);
+    }
+    100% {
+        width: $tag-helptext-width;
+        height: $tag-helptext-height;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + $tag-helptext-height);
+        margin-left: -($tag-helptext-width / 2);
+        padding: 0 4px;
+    }
+}
+
+@include keyframes(hideHelp) {
+    0% {
+        width: $tag-helptext-width;
+        height: $tag-helptext-height;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + $tag-helptext-height);
+        margin-left: -($tag-helptext-width / 2);
+        padding: 0 4px;
+    }
+    50%  {
+        width: $tag-helptext-width;
+        height: 2px;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + 2);
+        margin-left: -($tag-helptext-width / 2);
+    }
+    90%   {
+        width: 2px;
+        height: 2px;
+        border: 2px solid $green;
+        bottom: -($tag-line-height + 2);
+        margin-left: -1px;
+    }
+    100%   {
+        width: 0;
+        height: 0;
+        bottom: -$tag-line-height;
+    }
+}
+
 .skill-tag {
+    position: relative;
     background-color: $blue;
     color: $white;
     font-weight: 500;
@@ -12,6 +77,58 @@
     margin: 3px;
     opacity: 0;
     transform: scale(0);
+    z-index: 1;
 
     @include animate(revealScale, .7s $bouncy-transition .1s 1 normal forwards)
+    @include transition(all .2s $main-transition)
+
+    &.skill-tag_helptext {
+        cursor: pointer;
+
+        &:hover {
+            background-color: $green;
+            z-index: 10;
+
+            .skill-tag__line {
+                height: $tag-line-height;
+                bottom: -$tag-line-height;
+            }
+
+            .skill-tag__helptext {
+                @include animate(revealHelp, .4s $main-transition .3s 1 normal forwards)
+            }
+        }
+    }
+}
+
+.skill-tag__line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 0;
+    margin-left: -1px;
+    background-color: $green;
+
+    @include transition(all .2s $bouncy-transition .1s)
+}
+
+.skill-tag__helptext {
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    bottom: -$tag-line-height;
+    border-radius: 4px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: $green;
+
+    @include animate(hideHelp, .3s $main-transition)
+}
+
+.skill-tag__helptext-content {
+    font-size: 11px;
+    color: $white;
+    font-weight: 400;
 }

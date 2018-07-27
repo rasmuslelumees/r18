@@ -46,3 +46,9 @@
         @include animate(fadeIn, 1s ease 1.5s 1 normal forwards)
     }
 }
+
+@media(max-height: 500px) {
+    .slogan {
+        margin-bottom: 0;
+    }
+}

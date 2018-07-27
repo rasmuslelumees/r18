@@ -11,7 +11,7 @@ export default class Skills extends Component {
         const skills = [
             {
                 name: 'Web development',
-                help: '7+ years of creating web solutions for different mediums & platforms, using HTML, (preprocessed) CSS and JS'
+                help: '7+ years of creating web apps and sites for different mediums & platforms, using HTML, (preprocessed) CSS and JS'
             },
             {
                 name: 'React',

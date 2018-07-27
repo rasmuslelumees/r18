@@ -8,7 +8,7 @@ export default class SkillTag extends Component {
         if (this.props.help) className += ' skill-tag_withhelptext';
 
         return (
-            <div className={className} style={styles}>
+            <a className={className} style={styles}>
                 <span>{this.props.name}</span>
                 {
                     this.props.help && (
@@ -20,7 +20,7 @@ export default class SkillTag extends Component {
                         </div>
                     )
                 }
-            </div>
+            </a>
         );
     }
 }

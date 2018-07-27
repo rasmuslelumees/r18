@@ -37,6 +37,7 @@ $tag-helptext-width: 240px;
 
 .skill-tag {
     position: relative;
+    text-decoration: none;
     background-color: $blue;
     color: $white;
     font-weight: 500;
@@ -54,7 +55,7 @@ $tag-helptext-width: 240px;
     @include transition(all .2s $main-transition)
 
     &.skill-tag_withhelptext {
-        &:hover {
+        &:hover, &:active {
             background-color: $green;
             z-index: 10;
 

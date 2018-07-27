@@ -20,6 +20,14 @@ p {
     font-size: 16px;
 }
 
+::-moz-selection {
+    background: $yellow-light;
+}
+
+::selection {
+    background: $yellow-light;
+}
+
 .container, .root {
     height: 100%;
     min-height: 500px;

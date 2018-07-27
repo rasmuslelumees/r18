@@ -5,7 +5,7 @@ export default class SkillTag extends Component {
     render() {
         const styles = { animationDelay: this.props.delay };
         let className = 'skill-tag';
-        if (this.props.help) className += ' skill-tag_helptext';
+        if (this.props.help) className += ' skill-tag_withhelptext';
 
         return (
             <div className={className} style={styles}>
@@ -15,7 +15,7 @@ export default class SkillTag extends Component {
                         <div>
                             <div className='skill-tag__line'></div>
                             <div className='skill-tag__helptext'>
-                                <span className='skill-tag__helptext-content'>{this.props.help}</span>
+                                <div className='skill-tag__helptext-content'>{this.props.help}</div>
                             </div>
                         </div>
                     )
